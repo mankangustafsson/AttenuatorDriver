@@ -21,11 +21,14 @@ To remedy this I would put one extra LM317 to control the voltage to the first a
 I made the faulty assumption about coaxial relays could control the LED the same way the attenuators did. They do not! So the remedy is to use two free micro controller pins (I use A1 and A2) to control the relay LED indicators. Depending on LEDs used the micro controller could probably drive them directly or you could still use Q3 and Q4 to sink the current. Regardless solution you select you need to remove R4 and R6.
 
 ## Arduino Software
-First of all: Do not expect any compilation support from me. You are on your own. Arduino environment is messy when it comes to how it handles libraries used. I usually import the source code of the libraries I use into the project. However since I'm not the author of the display libraries I use. The current code also includes another library, Streaming, which I only used initially in this project.
+First of all: Do not expect any compilation support from me. You are on your own. Arduino environment is messy when it comes to how it handles libraries used. I usually import the source code of the libraries I use into the project. However since I'm not the author of the [display library] I use you have to download it yourself. The current code also includes another library, Streaming, which I only used initially in this project so remove that include statement.
 
 Second: Parts of the code is structured and easy to read. Some parts are not structured at all and poorly documented. I'm of the opinion that code should be written to be easy to understand by other programmers and therefore would not need much documentation. It is not currently in the "easy to understand" state.
 
 ## GPIB Control
 In order to avoid the Arduino being reset every time you connect to the serial port, you need to remove the capacitor between the CH340 DTR pin and the Arduino reset pin. Note that this will make it harder to upload new software to the Arduino. You will need to push the reset button manually at the proper moment during code upload.
 
-I've written some Python code using PyVisa to control the attenuators and relays. I'll upload it soon.
+I've written some Python code using PyVisa to control the attenuators and relays.
+
+[display library]:       http://www.mathertel.de/Arduino/LiquidCrystal_PCF8574.aspx
+
