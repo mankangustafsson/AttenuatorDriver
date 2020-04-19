@@ -23,7 +23,7 @@ I made the faulty assumption about coaxial relays could control the LED the same
 ## Arduino Software
 First of all: Do not expect any compilation support from me. You are on your own. Arduino environment is messy when it comes to how it handles libraries used. I usually import the source code of the libraries I use into the project. However since I'm not the author of the [display library] I use you have to download it yourself. The current code also includes another library, Streaming, which I only used initially in this project so remove that include statement.
 
-Second: Parts of the code is structured and easy to read. Some parts are not structured at all and poorly documented. I'm of the opinion that code should be written to be easy to understand by other programmers and therefore would not need much documentation. It is not currently in the "easy to understand" state.
+Second: Parts of the code is structured and easy to read. Some parts are not structured at all and poorly documented. I'm of the opinion that code should be written to be easy to understand by other programmers and therefore would not need much documentation. It is not currently in the "easy to understand" state and it might never be.
 
 ## GPIB Control
 In order to avoid the Arduino being reset every time you connect to the serial port, you need to remove the capacitor between the CH340 DTR pin and the Arduino reset pin. Note that this will make it harder to upload new software to the Arduino. You will need to push the reset button manually at the proper moment during code upload.
